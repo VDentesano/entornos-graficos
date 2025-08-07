@@ -1,0 +1,132 @@
+### 3.a) Diferencias entre enlaces (etiqueta <a>)
+
+- <a href="http://www.google.com.ar">Click aquí para ir a Google</a>
+  Crea un enlace estándar. Al hacer clic, la página de Google se cargará en la misma pestaña del navegador.
+
+- <a href="http://www.google.com.ar" target="_blank">Click aquí para ir a Google</a>
+  El atributo target="_blank" hace que la página de Google se abra en una nueva pestaña o ventana del navegador.
+
+- <a href="http://www.google.com.ar" type="text/html" hreflang="es" charset="utf-8" rel="help">
+  Este enlace, aunque funcionalmente similar al primero, contiene metadatos adicionales para los navegadores y buscadores: type indica el tipo de contenido, hreflang el idioma del destino, charset la codificación de caracteres, y rel la relación del enlace con la página actual (en este caso, un enlace de ayuda).
+
+- <a href="#">Click aquí para ir a Google</a>
+  El href="#" crea un "enlace muerto" o "enlace nulo". Al hacer clic, la página se desplazará hacia la parte superior, pero no navegará a ningún otro sitio.
+
+- <a href="#arriba">Click aquí para volver arriba</a>
+  Este es un enlace de ancla interno. Al hacer clic, buscará un elemento en la misma página que tenga el id="arriba" o name="arriba" y se desplazará hasta él.
+
+- <a name="arriba" id="arriba"></a>
+  Esta es el ancla de destino. Es un punto invisible en la página al que el enlace anterior puede apuntar. No tiene texto ni se visualiza, solo sirve como un marcador.
+
+---
+### 3.b) Diferencias en enlaces con imágenes
+
+- <p><img ... /><a href="...">Click aquí</a></p>
+  Se muestra una imagen y, a su lado, un texto que funciona como enlace. La imagen no es un enlace.
+
+- <p><a href="..."><img ... /></a> Click aquí</p>
+  La imagen es un enlace. Al hacer clic sobre la imagen, se irá a Google. El texto "Click aquí" está fuera del enlace y no es clickeable.
+
+- <p><a href="..."><img ... />Click aquí</a></p>
+  Tanto la imagen como el texto "Click aquí" están dentro del mismo enlace. Hacer clic en cualquiera de los dos te llevará a Google.
+
+- <p><a href="..."><img ... /></a> <a href="...">Click aquí</a></p>
+  Hay dos enlaces separados uno al lado del otro. Uno es la imagen y el otro es el texto. Ambos apuntan al mismo destino, pero son elementos <a> independientes.
+
+---
+### 3.c) Diferencias entre listas
+
+- <ul>...</ul>
+  Crea una lista no ordenada. Los elementos (<li>) se mostrarán con viñetas (puntos, círculos o cuadrados, dependiendo del navegador).
+
+- <ol>...</ol>
+  Crea una lista ordenada. Los elementos se numerarán automáticamente (1, 2, 3...).
+
+- <ol><li value="2">yyy</li></ol> (Asumiendo que hay más <li> antes)
+  Es una lista ordenada, pero el atributo value="2" fuerza a que ese elemento específico comience con el número 2, y los siguientes continuarían la numeración a partir de ahí.
+
+- <blockquote><p>1. xxx<br />...</p></blockquote>
+  Esto no es una lista semántica. Es un bloque de texto con sangría (<blockquote>) donde los números (1., 2., 3.) han sido escritos manualmente. No tiene la estructura de una lista HTML.
+
+---
+### 3.d) Diferencias entre tablas
+
+- Primer código (usando <th>):
+  Utiliza la etiqueta <th> (table header) para la primera fila. Esto hace que el texto dentro de esas celdas se muestre por defecto en negrita y centrado, indicando que es un encabezado.
+
+- Segundo código (usando <td>, <div>, <strong>):
+  Usa celdas de datos normales (<td>) y simula la apariencia de un encabezado usando etiquetas adicionales: <div> para centrar y <strong> para poner el texto en negrita. Visualmente puede ser idéntico, pero semánticamente es incorrecto, ya que no define un encabezado de tabla real.
+
+---
+### 3.e) Diferencias en títulos de tabla
+
+- Primer código (usando <caption>):
+  Utiliza la etiqueta <caption> para definir el título de la tabla. Esta es la forma semánticamente correcta de darle un título a una tabla, asociándolo directamente con ella para los navegadores y lectores de pantalla.
+
+- Segundo código (usando <tr> y colspan):
+  Simula un título creando una primera fila (<tr>) con una única celda (<td>) que se expande a lo ancho de tres columnas (colspan="3"). Visualmente funciona, pero no es un título semántico real para la tabla.
+
+---
+### 3.f) Diferencias en combinación de celdas
+
+- Primer código (usando rowspan):
+  La primera celda de la segunda fila (<td rowspan="2">) se expande verticalmente para ocupar el espacio de dos filas.
+
+- Segundo código (usando colspan):
+  La primera celda de la segunda fila (<td colspan="2">) se expande horizontalmente para ocupar el espacio de dos columnas.
+
+---
+### 3.g) Diferencias en atributos de tabla
+
+- Primer código (<table border="1">):
+  Crea una tabla con un borde visible de 1 píxel. No define el espacio entre celdas (cellspacing) ni el relleno dentro de las celdas (cellpadding), por lo que el navegador usará sus valores por defecto (normalmente un pequeño espacio y relleno).
+
+- Segundo código (<table ... cellpadding="0" cellspacing="0">):
+  El cellspacing="0" elimina el espacio entre las celdas, haciendo que los bordes se toquen.
+  El cellpadding="0" elimina el espacio de relleno dentro de las celdas, haciendo que el contenido quede pegado a los bordes.
+  Visualmente, esta tabla se verá más compacta y "apretada".
+
+---
+### 3.h) Diferencias entre formularios
+
+- Form 1 (method="post", <fieldset>, <legend>):
+  - method="post": Envía los datos del formulario de forma "invisible" en el cuerpo de la petición HTTP. Es el método preferido para enviar datos sensibles (como contraseñas).
+  - <fieldset> y <legend>: Agrupan visualmente los campos del formulario dentro de un recuadro con un título ("LOGIN"), lo cual mejora la organización.
+  - El input de clave es de tipo password, por lo que los caracteres se ocultarán (****).
+
+- Form 2 (method="get", <label>):
+  - method="get": Envía los datos del formulario de forma visible en la URL. No es seguro para contraseñas.
+  - <label>: Asocia semánticamente el texto con el campo de entrada. Esto mejora la accesibilidad y permite hacer clic en el texto para activar el campo.
+  - El input de clave es de tipo text, por lo que la contraseña será visible al escribirla.
+
+- Form 3 (action="mailto:...", enctype="text/plain", <input type="reset">):
+  - action="mailto:xx@xx.com": Al presionar el botón de envío, intentará abrir el cliente de correo electrónico del usuario para enviar los datos.
+  - enctype="text/plain": Asegura que los datos se envíen como texto simple en el cuerpo del correo.
+  - <input type="reset">: Este botón no envía el formulario. En su lugar, borra todos los datos introducidos y los devuelve a sus valores iniciales.
+
+---
+### 3.i) Diferencias entre botones
+
+- Botón 1 (<button>):
+  La etiqueta <button> es muy flexible. Permite contener otras etiquetas HTML dentro de ella, como en este caso una imagen (<img>) y texto en negrita (<b>). Es un contenedor.
+
+- Botón 2 (<input type="button">):
+  La etiqueta <input type="button"> es más simple. El texto del botón se define únicamente a través de su atributo value. No puede contener otras etiquetas HTML como imágenes.
+
+---
+### 3.j) Diferencias entre Radio Buttons
+
+- Primer grupo (name="opcion"):
+  Ambos radio buttons tienen el mismo name="opcion". Esto los agrupa, permitiendo que solo uno de ellos pueda ser seleccionado a la vez. Si seleccionas "Y", se deseleccionará "X".
+
+- Segundo grupo (name="opcion1", name="opcion2"):
+  Cada radio button tiene un name diferente. Esto significa que no están agrupados. Se comportan como casillas de verificación independientes, y se pueden seleccionar ambos al mismo tiempo.
+
+---
+### 3.k) Diferencias entre listas desplegables (<select>)
+
+- Primer código (<select name="lista">):
+  Es una lista desplegable estándar. Permite seleccionar una única opción de las disponibles. Los <optgroup> agrupan visualmente las opciones bajo subtítulos ("Caso 1", "Caso 2"), pero no cambian la funcionalidad.
+
+- Segundo código (<select ... multiple="multiple">):
+  El atributo multiple="multiple" (o simplemente multiple) convierte la lista desplegable en un cuadro de selección que permite elegir múltiples opciones a la vez, generalmente manteniendo presionada la tecla Ctrl (en Windows) o Cmd (en Mac). El name="lista[]" es una convención común para indicar al servidor que recibirá un array o una lista de valores.

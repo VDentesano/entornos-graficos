@@ -1,0 +1,75 @@
+---
+### 1. Qué es HTML, cuándo fue creado, cuáles fueron las distintas versiones y cuál es la última?
+
+HTML (HyperText Markup Language o Lenguaje de Marcas de Hipertexto) es el lenguaje de marcado estándar utilizado para crear y estructurar el contenido de las páginas web, como texto, imágenes y videos.
+
+Fue desarrollado originalmente por Tim Berners-Lee alrededor de 1990 en el CERN, y popularizado por el navegador Mosaic en 1993.
+
+Las principales versiones han sido:
+- HTML 2.0 (1995): El primer estándar formal.
+- HTML 3.2 (1997): Añadió características como tablas, applets y formato de texto.
+- HTML 4.01 (1999): Una revisión clave que limpió la especificación y la dividió en tres variantes: Estricta, Transicional y Frameset.
+- XHTML 1.0 (2000): Una reformulación de HTML 4.01 como un lenguaje XML más estricto.
+- HTML5 (Recomendación en 2014): Es la última y actual versión principal. Fue un gran salto que introdujo nuevas APIs para video y audio, gráficos con <canvas>, geolocalización, almacenamiento local y nuevos elementos semánticos como <header>, <footer>, <nav> y <article>.
+
+---
+### 2. ¿Cuáles son los principios básicos que el W3C recomienda seguir para la creación de documentos con HTML?
+
+El W3C, junto con el trabajo del WHATWG, ha establecido varios principios para el desarrollo de la web y HTML. Los más importantes son:
+
+- Interoperabilidad: El código debe funcionar correctamente en diferentes navegadores, plataformas y dispositivos (PCs, móviles, etc.). Esto reduce costos, ya que solo se necesita desarrollar una versión del documento.
+- Accesibilidad: La web debe ser accesible para todos, incluyendo personas con discapacidades. Esto implica el uso de texto alternativo para imágenes (alt), etiquetas semánticas correctas y un diseño que funcione con tecnologías de asistencia como lectores de pantalla.
+- Separación de contenido y presentación: La estructura del contenido (HTML) debe estar separada de su apariencia visual (CSS). Por esta razón, muchos elementos y atributos de presentación de HTML antiguo se consideran desaprobados.
+- Compatibilidad hacia atrás: Las nuevas tecnologías deben ser compatibles con las versiones anteriores para no "romper" los sitios web existentes.
+- Simplicidad y claridad: El código debe ser lo más claro y descriptivo posible. Las etiquetas de HTML5, por ejemplo, son claras y ayudan a que el código sea más ordenado y fácil de depurar.
+
+---
+### 3. En las Especificaciones de HTML, ¿cuándo un elemento o atributo se considera desaprobado? ¿y obsoleto?
+
+Aunque a menudo se usan como sinónimos, hay una diferencia técnica sutil:
+
+- Desaprobado (Deprecated): Un elemento o atributo desaprobado es aquel que ha sido reemplazado por una alternativa más nueva y mejor, pero que los navegadores todavía deben soportar por compatibilidad hacia atrás. Es una recomendación para que los desarrolladores dejen de usarlo en código nuevo. Un ejemplo claro son los atributos de presentación como align, bgcolor o la etiqueta <font>, que fueron reemplazados por CSS.
+- Obsoleto (Obsolete): Un elemento o atributo obsoleto es aquel que ya no debe usarse y que, además, los navegadores pueden dejar de soportar por completo. Usar un elemento obsoleto puede hacer que el código no funcione en navegadores modernos. Un ejemplo es la etiqueta <frameset>.
+
+En resumen, "desaprobado" es una advertencia de "no uses esto más", mientras que "obsoleto" significa "esto ya no se usa y podría no funcionar".
+
+---
+### 4. Qué es el DTD y cuáles son los posibles DTDs contemplados en la especificación de HTML 4.01?
+
+El DTD (Document Type Declaration o Declaración del Tipo de Documento) es la primera línea de un archivo HTML y le dice al navegador qué versión de HTML se está utilizando para que pueda interpretar y renderizar el código correctamente.
+
+En la especificación de HTML 4.01, se contemplaban tres posibles DTDs:
+
+1.  Strict (Estricto): <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+    - No permitía el uso de etiquetas o atributos desaprobados (de presentación). Forzaba una separación estricta entre estructura (HTML) y estilo (CSS).
+
+2.  Transitional (Transicional): <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    - Era más permisivo. Permitía el uso de algunos elementos y atributos desaprobados para facilitar la transición de páginas antiguas a los nuevos estándares.
+
+3.  Frameset (Marcos): Se usaba específicamente para páginas que utilizaban marcos (<frameset>) para dividir la ventana en múltiples documentos.
+
+Con HTML5, todo esto se simplificó a una única declaración mucho más corta: <!DOCTYPE HTML>.
+
+---
+### 5. Qué son los metadatos y cómo se especifican en HTML?
+
+Los metadatos son "datos sobre los datos". En el contexto de HTML, son información sobre el propio documento web que no se muestra visiblemente en la página, pero que es útil para los navegadores, los motores de búsqueda (como Google) y otros servicios web. La cabecera (<head>) contiene esta información destinada al navegador.
+
+Los metadatos pueden incluir:
+- La codificación de caracteres del documento.
+- El autor de la página.
+- Una descripción del contenido para los resultados de búsqueda.
+- Palabras clave relevantes.
+- Instrucciones para los robots de los buscadores.
+
+Se especifican principalmente con la etiqueta <meta>, la cual se coloca siempre dentro de la sección <head> del documento.
+
+Ejemplos:
+- Para especificar la codificación de caracteres (muy importante):
+    <meta charset="UTF-8">
+- Para definir palabras clave (uso antiguo de SEO):
+    <meta name="keywords" content="casa, compra, venta, alquiler">
+- Para darle una descripción a la página para los buscadores:
+    <meta name="description" content="Descripción concisa de la página.">
+- Para indicar el autor:
+    <meta name="author" content="Nombre del Autor">

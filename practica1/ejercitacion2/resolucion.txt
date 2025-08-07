@@ -1,0 +1,81 @@
+---
+### 2.a)
+
+- Descripción: Esto es un comentario en HTML. Su contenido es completamente ignorado por el navegador y no se muestra en la página. Sirve para que los desarrolladores dejen notas o aclaraciones en el código.
+- Sección del documento: Puede colocarse en cualquier parte del documento HTML, tanto en el <head> como en el <body>.
+- Elementos: No es un elemento en sí.
+- Etiquetas: (cierre).
+- Atributos: No tiene.
+
+---
+### 2.b)
+
+- Descripción: Esto define una división o un bloque genérico en la página. La etiqueta <div> se usa para agrupar otros elementos y aplicarles estilos con CSS o manipularlos con JavaScript.
+- Sección del documento: Se coloca dentro del <body>.
+- Elementos: El elemento div.
+- Etiquetas: <div> (apertura) y </div> (cierre).
+- Atributos:
+    - id="bloquel": Es un identificador único para este elemento. Su valor (bloquel) debe ser único en toda la página. Es opcional, pero fundamental para CSS y JavaScript.
+
+---
+### 2.c)
+
+- Descripción: Inserta una imagen en la página. Es un elemento vacío, lo que significa que no tiene una etiqueta de cierre.
+- Sección del documento: Se coloca dentro del <body>.
+- Elementos: El elemento img.
+- Etiquetas: <img />.
+- Atributos:
+    - src="": Obligatorio. Especifica la ruta (URL) del archivo de la imagen. En este caso está vacío, por lo que mostraría un ícono de imagen rota.
+    - alt="lugar imagen": Obligatorio para la accesibilidad. Proporciona un texto alternativo si la imagen no se puede cargar.
+    - id="im1": Opcional. Identificador único.
+    - name="iml": Opcional y obsoleto en HTML5. Se usaba para identificar la imagen en scripts.
+    - width="32": Opcional. Define el ancho de la imagen en píxeles.
+    - height="32": Opcional. Define el alto de la imagen en píxeles.
+    - longdesc="detalles.htm": Opcional. Es un atributo de accesibilidad que apunta a una página con una descripción más larga de la imagen.
+
+---
+### 2.d)
+
+- Descripción: Estas son etiquetas de metadatos. Proporcionan información sobre el documento que no es visible para el usuario, pero sí para los navegadores y los motores de búsqueda.
+- Sección del documento: Se colocan siempre dentro del <head>.
+- Elementos: El elemento meta.
+- Etiquetas: <meta />.
+- Atributos:
+    - Primer meta:
+        - name="keywords": Define el tipo de metadato (palabras clave para SEO).
+        - lang="es": Opcional. Indica que el contenido del atributo está en español.
+        - content="...": Contiene el valor del metadato, en este caso, la lista de palabras clave.
+    - Segundo meta:
+        - http-equiv="expires": Simula una cabecera HTTP. En este caso, le dice al navegador cuándo debe considerar que el contenido de la página ha "expirado" y debe volver a solicitarlo del servidor.
+        - content="...": Contiene la fecha y hora de expiración.
+
+---
+### 2.e)
+
+- Descripción: Crea un hipervínculo (enlace) al texto "Resumen HTML".
+- Sección del documento: Se coloca dentro del <body>.
+- Elementos: El elemento a (ancla).
+- Etiquetas: <a> (apertura) y </a> (cierre).
+- Atributos:
+    - href="...": Obligatorio. Especifica la URL de destino del enlace.
+    - type="text/html": Opcional. Indica el tipo de contenido del destino.
+    - hreflang="es": Opcional. Indica que el idioma de la página de destino es español.
+    - charset="utf-8": Opcional y obsoleto en <a>. Indica la codificación de caracteres del recurso enlazado.
+    - rel="help": Opcional. Describe la relación entre la página actual y la enlazada (en este caso, un documento de ayuda).
+
+---
+### 2.f)
+
+- Descripción: Define una tabla para mostrar datos en formato de filas y columnas.
+- Sección del documento: Se coloca dentro del <body>.
+- Elementos, Etiquetas y Atributos:
+    - <table>...</table>: El contenedor principal de la tabla.
+        - width="200": Opcional. Define el ancho de la tabla en píxeles.
+        - summary="...": Opcional y obsoleto en HTML5. Proporciona un resumen de la estructura de la tabla para herramientas de accesibilidad.
+    - <caption>...</caption>: Define el título de la tabla. Es opcional.
+        - align="top": Opcional y obsoleto. Alinea el título en la parte superior.
+    - <tr>...</tr>: Define una fila de la tabla. Es obligatorio para crear filas.
+    - <th>...</th>: Define una celda de encabezado. El texto aparece por defecto en negrita y centrado.
+        - scope="col": Obligatorio para accesibilidad. Indica que la celda es un encabezado para la columna.
+        - scope="row": Obligatorio para accesibilidad. Indica que la celda es un encabezado para la fila.
+    - <td>...</td>: Define una celda de datos estándar.
